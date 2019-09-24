@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
 
-<body>
+{% block title %}
+Bienvenido
+{{ super() }}
+{% endblock %}
+{% block content %}
     {% if user_ip %}
     <h1>Hola, tu direccion es {{ user_ip }}</h1>
     {% else %}
@@ -19,9 +16,4 @@
         <li> {{ task }} </li>
         {% endfor %}
     </ol>
-
-
-
-</body>
-
-</html>
+{% endblock %}
