@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% import 'macros.html' as macros %}
 
 {% block title %}
 Bienvenido
@@ -11,9 +11,9 @@ Bienvenido
     {% else %}
     <a href="{{ url_for('index') }}">Click Aqui</a>
     {% endif %}
-    <ol>
+    <ul>
         {% for task in todo_list %}
-        <li> {{ task }} </li>
+        {{macros.render_todo(task)}}
         {% endfor %}
-    </ol>
+    </ul>
 {% endblock %}
