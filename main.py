@@ -1,8 +1,12 @@
 from flask import Flask, request, make_response, redirect, render_template
 
+todos = ['Compra', 'Ejercicio', 'trabajar', 'Dormir', 'Repetir']
+
 app = Flask(__name__)
 
-todos = ['Compra', 'Ejercicio', 'trabajar', 'Dormir', 'Repetir']
+@app.errorhandler(404)
+def not_found(error):
+    return render_template('404.html', error=error)
 
 @app.route('/')
 def index():
