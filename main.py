@@ -1,8 +1,11 @@
 from flask import Flask, request, make_response, redirect, render_template
+from flask_bootstrap import Bootstrap
 
 todos = ['Compra', 'Ejercicio', 'trabajar', 'Dormir', 'Repetir']
 
 app = Flask(__name__)
+bootstrap = Bootstrap(app)
+
 
 @app.errorhandler(404)
 def not_found(error):
