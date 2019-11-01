@@ -2,5 +2,6 @@ html * {
     font-family: sans-serif
 }
 img{
-    max-width: 30px;
+    max-width: 38px;
+    margin-top: -8px;
 }
