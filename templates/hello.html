@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% import 'macros.html' as macros %}
+{% import 'bootstrap/wtf.html' as wtf %}
 
 {% block title %}
 Bienvenido
@@ -11,6 +12,11 @@ Bienvenido
     {% else %}
     <a href="{{ url_for('index') }}">Click Aqui</a>
     {% endif %}
+    <div class="container">
+            <form action="{{url_for('hello')}}" method="POST">
+                {{ wtf.quick_form(login_form) }}
+            </form>
+    </div>
     <ul>
         {% for task in todo_list %}
         {{macros.render_todo(task)}}
